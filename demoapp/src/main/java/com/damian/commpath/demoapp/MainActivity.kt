@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         tvStatus = findViewById(R.id.tvStatus)
         
         // Initialize CommPath
-        CommPath.init()
+        CommPath.init(applicationContext)
         
         // Register example module
         val exampleModule = ExampleModule()

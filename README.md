@@ -14,14 +14,39 @@ A lightweight Android Kotlin library that simplifies communication and transacti
 
 ## Setup
 
-### Gradle Configuration
+### Option 1: JitPack (Published Library)
 
-Add the library module to your project:
+Add the JitPack repository to your project's `settings.gradle.kts`:
+
+```kotlin
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url = uri("https://jitpack.io") }
+    }
+}
+```
+
+Then add the dependency in your app's `build.gradle.kts`:
+
+```kotlin
+dependencies {
+    implementation("com.github.damian-tochi:CommPath:1.0.0")
+}
+```
+
+> **Note:** Replace `1.0.0` with the [latest release tag](https://github.com/damian-tochi/CommPath/releases) from GitHub.
+
+### Option 2: Local Module (Development)
+
+Add the library module directly to your project:
 
 ```kotlin
 // settings.gradle.kts
-include(":app")  // your library module
-include(":demoapp")  // optional demo app
+include(":app")  // Library module
+include(":demoapp")  // Demo app
 ```
 
 In your app's `build.gradle.kts`:
@@ -48,6 +73,7 @@ CommPath.init(applicationContext)
 ```
 
 Or use AndroidX Startup for automatic initialization (see Advanced Usage).
+
 
 ### 2. Create a Module
 

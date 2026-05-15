@@ -16,6 +16,8 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        // JitPack repository for consuming the published library
+        maven { url = uri("https://jitpack.io") }
     }
 }
 

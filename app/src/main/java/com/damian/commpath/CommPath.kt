@@ -56,7 +56,7 @@ object CommPath {
      * Initialize CommPath.
      * Should be called once at application startup.
      */
-    fun init() {
+    fun init(context: Context) {
         if (_isInitialized.value) {
             return
         }
@@ -271,7 +271,7 @@ object CommPath {
  */
 class CommPathInitializer : Initializer<Unit> {
     override fun create(context: Context) {
-        CommPath.init()
+        CommPath.init(context)
     }
     
     override fun dependencies(): List<Class<out Initializer<*>>> = emptyList()

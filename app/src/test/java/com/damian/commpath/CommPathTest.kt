@@ -1,11 +1,13 @@
 package com.damian.commpath
 
+import android.content.Context
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
 import org.junit.Assert.*
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
+import org.robolectric.RuntimeEnvironment
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.delay
@@ -26,7 +28,7 @@ class CommPathTest {
         CommPath.clear()
         testModule = TestModule()
         // Initialize CommPath
-        CommPath.init()
+        CommPath.init(RuntimeEnvironment.application)
         CommPath.registerModule(testModule)
     }
     
